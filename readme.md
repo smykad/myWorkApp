@@ -6,6 +6,14 @@ The subheadings link to the script contents on GitHub.
 + Authors: [Doug Smyka](https://github.com/smykad)
 + Created: 2022.04.20
 
-## [arrivals.py](https://github.com/smykad/myWorkApp/blob/master/checkbox.py)
+
+This script reads a csv file and generates a readable arrival list for todays 
+or tomorrows arrivals
+
+## [checkbox.py](https://github.com/smykad/myWorkApp/blob/master/checkbox.py)
 + Authors: [Doug Smyka](https://github.com/smykad)
 + Created: 2022.04.20
+
+This script reads a csv file and generates a readable in house list with
+checkboxes.  Intended for breakfast staff to mark which rooms have had their 
+breakfast orders completed. 
