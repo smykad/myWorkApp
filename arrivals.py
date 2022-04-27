@@ -214,7 +214,5 @@ def main():
     msvcrt.getch() # waits for 1 key to be pressed
     os.startfile("arrivals.txt", "print") # Prints the file that was created
     
-    
-  
 main()
 # EOF
