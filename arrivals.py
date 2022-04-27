@@ -1,5 +1,6 @@
-import csv 
+import csv, os
 from datetime import timedelta, date
+
 
 
 def myData(myFile):
@@ -210,8 +211,11 @@ def main():
     myString = myChoice(ret)
     print(f'Creating {myFile} for {myString} arrivals')
     createFile(myFile, int(ret))
-    print('File has been written, press any key to close')
+    print('File has been written, press any key to print')
     input()
+    os.startfile("arrivals.txt", "print")
+    
+    
   
 main()
 # EOF
