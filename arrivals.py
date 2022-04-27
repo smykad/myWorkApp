@@ -1,6 +1,5 @@
-import csv, os
+import csv, os, msvcrt
 from datetime import timedelta, date
-
 
 
 def myData(myFile):
@@ -211,9 +210,9 @@ def main():
     myString = myChoice(ret)
     print(f'Creating {myFile} for {myString} arrivals')
     createFile(myFile, int(ret))
-    print('File has been written, press any key to print')
-    input()
-    os.startfile("arrivals.txt", "print")
+    print('File has been written, press any key to print') 
+    msvcrt.getch() # waits for 1 key to be pressed
+    os.startfile("arrivals.txt", "print") # Prints the file that was created
     
     
   
