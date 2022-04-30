@@ -10,7 +10,11 @@ The subheadings link to the script contents on GitHub.
 This script reads a csv file and generates a readable arrival list for todays 
 or tomorrows arrivals.  Make sure the csv file is saved in a folder called
 data in the same directory as the script.  Added a dummy CSV file to show how
-it works.  Added printing functionality 4.27.22
+it works.  
+
+### Updates
++ 4.27.22: Added printing functionality
++ 4.29.22: Added detection for duplicate rooms with Unkown name's
 
 ## [checkbox.py](https://github.com/smykad/myWorkApp/blob/master/checkbox.py)
 + Authors: [Doug Smyka](https://github.com/smykad)
