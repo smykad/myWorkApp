@@ -7,17 +7,22 @@ def myData(myFile):
     with open(myFile) as f: # Open CSV file
         reader = csv.reader(f)  # Read CSV File
         nights, rooms, names = [], [], []   # retrieve nights, rooms, names
+        duplicates = 0
         for row in reader:
-            try: 
-                night = int(row[5]) # get length of stay
-                room = int(row[6])  # get room number
-                nights.append(night)    # append nights to list
-                rooms.append(room)  # append rooms to list
-                name = row[0]   # get names
-                names.append(name)  # append names to list
+            try:
+                if int(row[6]) in rooms or row[0] == 'UNKNOWN, UNKNOWN': # catches duplicate rooms
+                    duplicates += 1
+                    pass
+                else:
+                    night = int(row[5]) # get length of stay
+                    room = int(row[6])  # get room number
+                    nights.append(night)    # append nights to list
+                    rooms.append(room)  # append rooms to list
+                    name = row[0]   # get names
+                    names.append(name)  # append names to list
             except ValueError:
                 pass
-        return nights, rooms, names # Return the lists
+        return nights, rooms, names, duplicates # Return the lists
 
 def myNames(myList, myInt):
     """Function to get split first and last names."""
@@ -58,7 +63,7 @@ def createFile(myFile, myInt):
     # Set the date, 0 if you're doing for today, 1 for tomorrow, etc
     today = setMyDate(myInt)
     # Make lists retrieved from file
-    nights, rooms, names = myData(myFile)
+    nights, rooms, names, duplicates = myData(myFile)
 
     # Make a list for first and last names
     lastNames, firstNames = myNames(names, 0), myNames(names, 1)
@@ -155,6 +160,8 @@ def createFile(myFile, myInt):
             header(seperator, f'Extended stays: {myExts}', f)
             myRooms(extendedRooms, extendedStays, extendedFNames, extendedLNames, f)
         header(seperator, f'Breakast Forms Needed: {totalNights}', f)
+        if duplicates > 0:
+            header('\n', f'Duplicate rooms found: {duplicates}', f)
 
 def isValidInt():
     """Function to determine if valid int and if its within a valid range of 0 to 1"""
