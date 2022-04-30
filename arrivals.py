@@ -184,6 +184,13 @@ def isValidInt():
 
     return ret
 
+def isValidChar():
+    """Returns a single character in string format"""
+    char = msvcrt.getch() # get's user input for 1 character
+    ret = str(char) # converts it into a string
+    ret = ret[2] # gets the character the user input
+    return ret # returns the string the user input
+
 def isValidFile():
     """Determines if CSV file exists"""
     myBool = False
@@ -206,7 +213,11 @@ def myChoice(myInt):
         case 1:
             ret = 'tomorrow\'s'
     return ret
-             
+
+def closeApp():
+    """Method for prompting user to close application"""
+    print('Press any key to close.')
+    msvcrt.getch() # Wait for user to press a key to close the app    
 
 def main():
     """Main Method for the script to take user input, validate and create a file"""
@@ -217,9 +228,15 @@ def main():
     myString = myChoice(ret)
     print(f'Creating {myFile} for {myString} arrivals')
     createFile(myFile, int(ret))
-    print('File has been written, press any key to print') 
-    msvcrt.getch() # waits for 1 key to be pressed
-    os.startfile("arrivals.txt", "print") # Prints the file that was created
+    print('File has been written, would you like to print? [y/n]') 
+    key = isValidChar() # waits for 1 key to be pressed
+    if key == "y":
+        print('Document is now printing') # Inform the user the document is printing
+        os.startfile("arrivals.txt", "print") # Prints the file that was created
+        closeApp()
+    else:
+        closeApp()
+        
     
 main()
 # EOF

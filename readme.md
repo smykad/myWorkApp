@@ -14,7 +14,10 @@ it works.
 
 ### Updates
 + 4.27.22: Added printing functionality
-+ 4.29.22: Added detection for duplicate rooms with Unkown name's
++ 4.29.22: 
+    + Added detection for duplicate rooms with Unkown name's
+
+
 
 ## [checkbox.py](https://github.com/smykad/myWorkApp/blob/master/checkbox.py)
 + Authors: [Doug Smyka](https://github.com/smykad)
