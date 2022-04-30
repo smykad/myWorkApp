@@ -13,9 +13,11 @@ data in the same directory as the script.  Added a dummy CSV file to show how
 it works.  
 
 ### Updates
-+ 4.27.22: Added printing functionality
-+ 4.29.22: 
++ 4.27.22
+    + Added printing functionality
++ 4.29.22 
     + Added detection for duplicate rooms with Unkown name's
+    + Added option to decline printing functionality
 
 
 
